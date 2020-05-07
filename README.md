@@ -1,5 +1,8 @@
 # 切片 + 断点续传
+## 致谢：
+>> [yeyan1996](https://juejin.im/post/5dff8a26e51d4558105420ed#heading-17)
 
+>> [b站阿婆主：旅梦开发团](https://space.bilibili.com/43651653?spm_id_from=333.788.b_765f7570696e666f.2)
 ## 安装依赖
 ```
 yarn install
