@@ -40,7 +40,7 @@
       </div>
       <div class="content">
         <v-img :src="container.filePreview"
-               v-if="container.filePreview && container.fileExt !== 'mp4'"
+               v-if="container.filePreview && container.fileExt !== 'mp4' && container.fileExt !== 'mp3' && container.fileExt !== 'mpeg'"
                aspect-ratio="1.7"
                contain
                width="300"
@@ -50,6 +50,9 @@
                width="300"
                :src="container.filePreview"
                controls></video>
+        <audio controls
+               :src="container.filePreview"
+               v-if="container.filePreview && container.fileExt === 'mp3' || container.fileExt === 'mpeg'"></audio>
         <v-progress-linear :value="container.precent"
                            height="25"
                            rounded
@@ -192,7 +195,6 @@ export default {
       }
     },
     async fileChange ([file]) {
-      console.log(this.$options)
       Object.assign(this.$data, this.$options.data())
       const { size } = file
       const { name, ext } = this._getFileNameAndExt(file)
@@ -346,6 +348,9 @@ export default {
 };
 </script>
 <style scoped>
+* {
+  outline: none;
+}
 .uploader {
   padding: 0 30px;
   display: flex;
