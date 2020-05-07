@@ -6,8 +6,8 @@ module.exports = {
     proxy: {
       "/api": {
         target: "http://127.0.0.1:5000",
-        changeOrigin: true, //是否跨域
-        ws: true, //是否启用websockets
+        changeOrigin: true,
+        ws: true,
         pathRewrite: {
           "^api": "/api"
         }
